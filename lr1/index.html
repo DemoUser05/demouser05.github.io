@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Симулятор космічної експедиції</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Додати ефект плавного прокручування */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Симулятор космічної експедиції</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Про симулятор</a></li>
+                <li><a href="#ship">Космічний корабель</a></li>
+                <li><a href="#missions">Експедиції</a></li>
+                <li><a href="#journeys">Мої подорожі</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Секція Про симулятор -->
+        <section id="about" class="container">
+            <h2>Про симулятор</h2>
+            <div>
+                <p>Наш симулятор космічної експедиції дозволяє вам стати капітаном космічного корабля та вирушити у вражаючі подорожі по галактиці. У вас є можливість керувати станом корабля, виконувати різноманітні місії, а також переглядати історію своїх експедицій. Зануртеся в реалістичний процес керування космічним судном, де ви будете відповідати за рівень пального, енергії та чисельність екіпажу.</p>
+                <p>У розділі "Експедиції" ви знайдете доступні місії, які варіюються за складністю та завданнями. Вибір правильної стратегії може вплинути на успішність подорожі. У "Моїх подорожах" ви можете побачити результати своїх попередніх місій та відстежувати прогрес поточних експедицій.</p>
+                <p>Приготуйтеся до захоплюючих пригод в космосі та станьте справжнім героєм у світі космічних подорожей!</p>
+            </div>
+        </section>
+
+        <!-- Секція Космічний корабель -->
+        <section id="ship" class="container">
+            <!--<img src="ship.png" alt="Космічний корабель">-->
+            <div>
+                <h2>Космічний корабель</h2>
+                <p>Керуйте станом судна: рівень пального, енергії, екіпаж.</p>
+                <button onclick="window.location.href='ship_status.html'">Стан корабля</button>
+                <button onclick="window.location.href='fuel.html'">Паливо</button>
+                <button onclick="window.location.href='energy.html'">Енергія</button>
+                <button onclick="window.location.href='crew.html'">Чисельність екіпажу</button>
+            </div>
+        </section>
+
+        <section id="indicators" class="container">
+            <h2>Показники стану корабля</h2>
+            <div class="progress">
+                <span>Паливо</span>
+                <div class="progress-bar" id="fuel-bar" style="width: 70%;">70%</div>
+            </div>
+            <div class="progress">
+                <span>Енергія</span>
+                <div class="progress-bar" id="energy-bar" style="width: 70%;">50%</div>
+            </div>
+            <div class="progress">
+                <span>Екіпаж</span>
+                <div class="progress-bar" id="crew-bar" style="width: 70%;">90%</div>
+            </div>
+        </section>
+
+        <!-- Секція Експедиції -->
+        <section id="missions">
+            <h2>Експедиції</h2>
+            <div class="missions-list">
+                <div class="mission-card">
+                    <h3>Місія 1: Дослідження планети</h3>
+                    <p>Дослідження нової планети та збір даних.</p>
+                    <button>Деталі</button>
+                </div>
+                <div class="mission-card">
+                    <h3>Місія 2: Рятувальна операція</h3>
+                    <p>Рятування загубленого корабля.</p>
+                    <button>Деталі</button>
+                </div>
+                <div class="mission-card">
+                    <h3>Місія 3: Видобуток ресурсів</h3>
+                    <p>Отримання ресурсів з астероїдів.</p>
+                    <button>Деталі</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="journeys">
+            <h2>Мої подорожі</h2>
+            <div class="journey-map">
+                <div class="journey-marker" style="top: 15%; left: 36%;" data-tooltip="Місія 1: Дослідження планети"></div>
+                <div class="journey-marker" style="top: 37%; left: 76%;" data-tooltip="Місія 2: Рятувальна операція"></div>
+                <div class="journey-marker" style="top: 53%; left: 48%;" data-tooltip="Місія 3: Видобуток ресурсів"></div>
+            </div>
+            <div id="journey-details" class="details">
+                <p>Натисніть на маркер, щоб переглянути деталі.</p>
+            </div>
+        </section>
+
+        <section id="achievements" class="container">
+            <h2>Досягнення</h2>
+            <div class="achievement">
+                <p>Місія 1: Дослідження планети</p>
+                <div class="progress-bar" id="mission1-progress" style="width: 100%;">80% (Завершено)</div>
+            </div>
+            <div class="achievement">
+                <p>Місія 2: Рятувальна операція</p>
+                <div class="progress-bar" id="mission2-progress" style="width: 100%;">50% (У прогресі)</div>
+            </div>
+            <div class="achievement">
+                <p>Місія 3: Видобуток ресурсів</p>
+                <div class="progress-bar" id="mission3-progress" style="width: 100%;">100% (Виконано)</div>
+            </div>
+            <div class="reward">
+                <p>Винагорода: ⭐⭐⭐⭐</p>
+            </div>
+        </section>
+                
+    </main>
+
+    <footer>
+        <p>Контакти: space@expedition.com | Телефон: +380 123 456 789</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+</html>
