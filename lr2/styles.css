@@ -1,0 +1,799 @@
+/* Фонове зображення для тіла сторінки */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('photo-space-background.jpg');
+    background-size: cover; /* Робить фон повністю заповнювати екран */
+    background-position: center; /* Вирівнює зображення по центру */
+    background-attachment: fixed; /* Фіксує фон при прокрутці */
+    color: white;
+    text-align: center;
+    padding-top: 130px; /* Відступ, щоб уникнути перекриття */
+}
+
+h1, h2 {
+    color: #ffcc00;   /*Колір заголовків*/
+}
+
+/* Навігація */
+header {
+    background-color: #1c2541;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 90px; /* Висота хедера */
+    
+}
+
+/* Для плавного прокручування */
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    padding-top: 100px; /* Залишаємо відступ для секцій */
+    scroll-margin-top: 100px; /* Враховуємо висоту хедера */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s ease-in-out, letter-spacing 0.3s ease;
+}
+
+/* Ефект наведення на посилання */
+nav a:hover {
+    color: #ffcc00; /* Зміна кольору на жовтий при наведенні */
+    transform: scale(1.1); /* Трошки збільшуємо розмір посилання */
+    letter-spacing: 1px; /* Збільшуємо відстань між буквами */
+}
+
+/* Підкреслення при натисканні */
+nav a:active {
+    text-decoration: none; /* Без підкреслення при натисканні */
+    color: #ff9900; /* Зміна кольору при натисканні */
+}
+
+/* Контейнер для секцій */
+.container {
+    display: flex;
+    align-items: center; /* Вирівнюємо елементи по вертикалі */
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+    gap: 20px; /* Додаємо відступ між зображенням і текстом */
+    flex-wrap: wrap; /* Дозволяє переносити елементи, якщо екран вузький */
+}
+
+.container img {
+    width: 150px; /* Зменшуємо ширину зображення */
+    height: auto; /* Автоматична висота */
+}
+
+.container div {
+    flex: 1; /* Розтягує блок з текстом */
+}
+
+/* Стиль для секції "Про симулятор" */
+#about {
+    background-color: #1c2541;
+    padding: 40px;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+#about h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #ffcc00;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#about .container {
+    display: block; /* Перехід на одно-колонковий вигляд */
+    text-align: left;
+}
+
+/* Зображення */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Кнопки */
+button {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ff9900;
+}
+
+/* Прогрес-бари для стану корабля*/
+.progress-bar {
+    height: 40px;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    transition: width 0.5s ease-in-out;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#upgrade-section p {
+    font-size: 18px; /* Оптимальний розмір тексту */
+    line-height: 1.6; /* Простір між рядками */
+    color: #d1d1d1; /* Світло-сірий текст для читабельності */
+    margin: 20px;
+    padding: 0 10px;
+    text-align: center; /* Вирівнювання тексту по ширині */
+}
+
+.modal-content {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 300px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.carousel-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-top: 70px;
+}
+
+/* Контейнер каруселі */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Карусель */
+.carousel {
+    width: 600px;
+    height: 480px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    margin: auto;
+    
+}
+
+/* Трек слайдів */
+.slides {
+    display: flex;
+    width: 400%; /* 4 слайди */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Один слайд */
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    text-align: center;
+}
+
+/* Зображення */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+/* Блок опису */
+.desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Розтягуємо по ширині картинки */
+    height: 100%; /* Розтягуємо по висоті картинки */
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    text-align: center;
+    color: #ffcc00;
+    background: rgba(0, 0, 0, 0.8); /* Напівпрозорий чорний фон */
+    padding: 0px;
+    font-size: 18px;
+    border-radius: 10px;
+    
+    opacity: 0; /* Приховуємо спочатку */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Відображення при наведенні */
+.slide:hover .desc {
+    opacity: 1;
+}
+
+
+
+/* Відображення тексту при наведенні */
+.slide:hover .desc {
+    opacity: 1;
+}
+
+
+
+/* Приховуємо стандартні радіо-кнопки */
+input[type="radio"] {
+    display: none;
+}
+
+/* Одна навігація під каруселлю */
+.navigation {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+}
+
+.navigation label {
+    width: 12px;
+    height: 12px;
+    background: #ffcc00;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.navigation label:hover {
+    background: #ddd;
+}
+
+/* Перемикання слайдів */
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+#slide4:checked ~ .slides {
+    transform: translateX(-300%);
+}
+
+
+
+
+
+.missions-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/*.mission-card {
+    background-color: #1c2541;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}*/
+
+.mission-card {
+    background-color: #1c2541;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center; /* Вирівнює текст у центр */
+    padding: 20px;
+}
+
+.mission-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 80px; /* Фіксована висота, щоб усі картки були рівними */
+}
+
+.mission-info p {
+    margin: 5px 0; /* Однакові відступи */
+}
+
+
+.mission-card button {
+    margin-top: auto; /* Вирівнює кнопки внизу */
+    width: 100%; /* Робить кнопку однакової ширини */
+    text-align: center;
+}
+
+
+/* Контейнер для індикаторів прогресу */
+#indicators {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1c2541;
+    border-radius: 10px;
+    color: white;
+    text-align: left;
+}
+
+/* Прогрес-бари */
+.progress {
+    margin-bottom: 20px;
+}
+
+.progress span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffcc00;
+}
+
+.progress-bar {
+    height: 20px;
+    background-color: #ffcc00;
+    border-radius: 5px;
+    color: black;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Секція досягнень */
+#achievements {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #1c2541;
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє переносити блоки на новий рядок */
+    justify-content: center;
+    gap: 20px; /* Відступи між блоками */
+}
+
+/* Блоки досягнень */
+.achievement {
+    width: 250px; /* Фіксована ширина */
+    height: 150px; /* Фіксована висота */
+    background-color: #16203a;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Вирівнювання тексту по вертикалі */
+    align-items: center; /* Вирівнювання по горизонталі */
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.5); /* Додаємо світловий ефект */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+/* Текст у досягненнях */
+.achievement-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.reward {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ffcc00; /* Жовтий для зірок */
+}
+
+.achievement p {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffcc00; /* Жовтий текст */
+    margin-bottom: 10px;
+    line-height: 1.4; /* Оптимальний міжрядковий інтервал */
+    height: 70px; /* Фіксована висота для забезпечення однакової структури */
+    display: flex;
+    align-items: center; /* Вертикальне вирівнювання тексту всередині блоку */
+    justify-content: center; /* Горизонтальне вирівнювання */
+    text-align: center; /* Текст по центру */
+    overflow: hidden; /* Уникаємо виходу тексту за межі блоку */
+}
+
+
+.progress-bar {
+    width: 100%; /* Прогрес-бар розтягується по ширині */
+    height: 30px; /* Збільшуємо висоту для тексту */
+    background-color: #ffcc00; /* Жовтий фон */
+    border-radius: 5px;
+    display: flex; /* Використовуємо flex для центрування тексту */
+    align-items: center;
+    justify-content: center; /* Текст у центрі */
+    color: black; /* Чорний текст для жовтого фону */
+    font-weight: bold;
+    line-height: 1; /* Контроль за інтервалами тексту */
+    position: relative;
+    transition: width 0.5s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Зелений для завершених завдань */
+.progress-bar.complete {
+    background-color: #28a745; /* Зелений фон */
+    color: white; /* Білий текст */
+}
+
+/* Контейнер для мапи */
+.journey-map {
+    position: relative;
+    width: 80%;
+    aspect-ratio: 16 / 9; /* Фіксоване співвідношення сторін (змінює висоту пропорційно ширині) */
+    margin: auto;
+    background-image: url('map2.jpg');
+    background-size: cover;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
+}
+
+/* Маркери на карті */
+.journey-marker {
+    position: relative;
+    width: 2vw;  /* Використовуємо відносний розмір */
+    height: 2vw;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+}
+
+/* Адаптивне позиціонування маркерів у відсотках */
+.journey-marker[data-marker="1"] {
+    top: 20%;  /* Відносно висоти контейнера */
+    left: 30%; /* Відносно ширини контейнера */
+}
+
+.journey-marker[data-marker="2"] {
+    top: 50%;
+    left: 60%;
+}
+
+.journey-marker[data-marker="3"] {
+    top: 70%;
+    left: 40%;
+}
+
+/* Ефект наведення */
+.journey-marker:hover {
+    transform: scale(1.2);
+}
+
+/* Підказка */
+.journey-marker::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1c2541;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1vw; /* Розмір тексту теж адаптивний */
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.journey-marker:hover::after {
+    opacity: 1;
+}
+
+#ship-marker {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-image: url('pngwing3.com.png'); /* Іконка корабля */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)); /* Додає сяйво */
+    background-size: cover;
+    border-radius: 50%;
+    top: 10%;
+    left: 10%;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Блок деталей */
+.details {
+    margin-top: 20px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    background-color: #1c2541;
+    border-radius: 10px;
+}
+
+/* 🔹 Секція коментарів */
+#comments {
+    background-color: #1c2541;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin: 40px auto;
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
+}
+
+#comments h2 {
+    color: #ffcc00;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* 🔹 Форма введення */
+#comment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#comment-form input, 
+#comment-form textarea {
+    width: 90%;
+    max-width: 600px;
+    padding: 10px;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    background-color: #162447;
+    color: white;
+    font-size: 16px;
+}
+
+#comment-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+/* 🔹 Кнопки */
+#comment-form button, 
+#clear-comments {
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#comment-form button:hover, 
+#clear-comments:hover {
+    background-color: #ff9900;
+}
+
+/* 🔹 Блок коментарів */
+#comment-section {
+    margin-top: 20px;
+    text-align: left;
+    background-color: #162447;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+}
+
+#comment-section p {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 204, 0, 0.4);
+}
+
+#comment-section p:last-child {
+    border-bottom: none;
+}
+
+/* 🔹 Кнопка очищення коментарів */
+#clear-comments {
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Футер */
+footer {
+    background-color: #1c2541;
+    padding: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #ffcc00;
+}
+
+/* Адаптація для планшетів (максимальна ширина 768px) */
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Автоматична висота */
+        padding: 15px 0;
+    }
+
+    body {
+        padding-top: 100px; /* Менший відступ, щоб уникнути перекриття */
+    }
+
+    nav ul {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+    }
+
+    .container {
+        flex-direction: column; /* Елементи в колонку */
+        text-align: center;
+    }
+
+    .container img {
+        width: 120px; /* Менший розмір зображень */
+    }
+
+    .mission-card {
+        width: 100%; /* Робимо картки ширшими */
+    }
+
+    .journey-marker {
+        width: 2vw; 
+        height: 2vw;
+    }
+
+    .journey-marker::after {
+        font-size: 2vw; 
+    }
+}
+
+/* Адаптація для мобільних пристроїв (максимальна ширина 480px) */
+@media (max-width: 480px) {
+    header {
+        height: auto; /* Автоматична висота */
+        padding: 15px 0;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    nav a {
+        font-size: 16px; /* Менший шрифт */
+    }
+
+    .container img {
+        width: 100px; /* Зменшуємо розмір зображень ще більше */
+    }
+
+    #about {
+        padding: 20px; /* Менший відступ */
+        font-size: 16px;
+    }
+
+    .missions-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .mission-card {
+        width: 90%; /* Зменшуємо ширину */
+    }
+
+    .journey-map {
+        width: 100%; /* Робимо карту повністю адаптивною */
+        height: 300px; /* Менша висота */
+    }
+
+    .progress-bar {
+        height: 15px; /* Зменшуємо висоту прогрес-барів */
+        font-size: 12px;
+    }
+
+    .journey-marker {
+        width: 2vw; /* Ще більше на дуже малих екранах */
+        height: 2vw;
+    }
+
+    .journey-marker::after {
+        font-size: 2.5vw;
+    }
+}
+
+@keyframes launch {
+    0% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-50px); opacity: 0.7; }
+    100% { transform: translateY(-100px); opacity: 0; }
+}
+
+.launch-animation {
+    animation: launch 1.5s ease-out forwards;
+}
+
